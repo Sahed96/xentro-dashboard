@@ -13,15 +13,15 @@ const Sidebar = () => {
         </p>
       </div>
       <ul className="flex flex-col mt-5 text-xl">
-				<NavLink to="dashboard">
-				<li
-          className="flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer 
+        <NavLink to="dashboard">
+          <li
+            className="flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer 
         hover:bg-blue-600 hover:text-white"
-        >
-          <FaTachometerAlt />
-          <span className="hidden md:inline">Dashboard</span>
-        </li>
-				</NavLink>
+          >
+            <FaTachometerAlt />
+            <span className="hidden md:inline">Dashboard</span>
+          </li>
+        </NavLink>
         <NavLink to="users">
           <li
             className="flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer 
@@ -38,13 +38,15 @@ const Sidebar = () => {
           <MdAddToPhotos />
           <span className="hidden md:inline ">Add Products</span>
         </li>
-        <li
-          className="flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer 
+        <NavLink to="products">
+          <li
+            className="flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer 
         hover:text-white hover:bg-blue-600"
-        >
-          <FaBox />
-          <span className="hidden md:inline ">Products</span>
-        </li>
+          >
+            <FaBox />
+            <span className="hidden md:inline ">Products</span>
+          </li>
+        </NavLink>
       </ul>
     </div>
   );

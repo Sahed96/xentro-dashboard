@@ -5,6 +5,7 @@ import App from './App';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Users from './components/Users';
 import Dashboard from './components/Dashboard';
+import Products from './components/Products';
 
 const router = createBrowserRouter([
   {
@@ -12,12 +13,20 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
+        index: true,
+        element: <Dashboard />,
+      },
+      {
         path: 'users',
         element: <Users />,
       },
       {
         path: 'dashboard',
-        element: <Dashboard />
+        element: <Dashboard />,
+      },
+      {
+        path: 'products',
+        element: <Products />,
       },
     ],
   },

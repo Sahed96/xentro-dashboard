@@ -10,6 +10,8 @@ import {
   LinearScale,
   PointElement,
 } from 'chart.js';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 ChartJS.register(
   LineElement,
   BarElement,
@@ -19,13 +21,20 @@ ChartJS.register(
 );
 
 const Dashboard = () => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://jsonplaceholder.typicode.com/users').then(res => {
+      setUsers(res.data);
+    });
+  })
   return (
     <div className="grow p-8">
       <h2 className="text-2xl mb-4">Dashboard</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <Card icon={<FaShoppingCart />} title="Orders" value="140" />
         <Card icon={<FaBox />} title="Products" value="120" />
-        <Card icon={<FaUsers />} title="Users" value="30" />
+        <Card icon={<FaUsers />} title="Users" value={`${users.length}`} />
         <Card icon={<FaCog />} title="Settings" value="11" />
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
