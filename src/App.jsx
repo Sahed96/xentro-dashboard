@@ -1,4 +1,5 @@
-import Dashboard from './components/Dashboard';
+import { Outlet } from 'react-router-dom';
+// import Dashboard from './components/Dashboard';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import ThemeContextProvider from './context/ThemeContextProvider';
@@ -14,7 +15,7 @@ function App() {
         >
           <Navbar />
           <div>
-            <Dashboard />
+            <Outlet />
           </div>
         </div>
       </div>

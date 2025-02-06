@@ -1,6 +1,7 @@
 import { MdAddToPhotos } from 'react-icons/md';
 import logo from '/xentro.jpg';
 import { FaTachometerAlt, FaUsers, FaBox } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
@@ -12,20 +13,24 @@ const Sidebar = () => {
         </p>
       </div>
       <ul className="flex flex-col mt-5 text-xl">
-        <li
+				<NavLink to="dashboard">
+				<li
           className="flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer 
         hover:bg-blue-600 hover:text-white"
         >
           <FaTachometerAlt />
           <span className="hidden md:inline">Dashboard</span>
         </li>
-        <li
-          className="flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer 
+				</NavLink>
+        <NavLink to="users">
+          <li
+            className="flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer 
         hover:text-white hover:bg-blue-600"
-        >
-          <FaUsers />
-          <span className="hidden md:inline ">Users</span>
-        </li>
+          >
+            <FaUsers />
+            <span className="hidden md:inline ">Users</span>
+          </li>
+        </NavLink>
         <li
           className="flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer 
         hover:text-white hover:bg-blue-600"
