@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import { MdAddToPhotos } from 'react-icons/md';
 import logo from '/xentro.jpg';
 import { FaTachometerAlt, FaUsers, FaBox } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
+import { AiFillProduct } from 'react-icons/ai';
 
 const Sidebar = () => {
   return (
@@ -31,13 +33,24 @@ const Sidebar = () => {
             <span className="hidden md:inline ">Users</span>
           </li>
         </NavLink>
-        <li
-          className="flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer 
+        <NavLink to="add-products">
+          <li
+            className="flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer 
         hover:text-white hover:bg-blue-600"
-        >
-          <MdAddToPhotos />
-          <span className="hidden md:inline ">Add Products</span>
-        </li>
+          >
+            <MdAddToPhotos />
+            <span className="hidden md:inline ">Add Products</span>
+          </li>
+        </NavLink>
+        <NavLink to={'new-products'}>
+          <li
+            className="flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer 
+        hover:text-white hover:bg-blue-600"
+          >
+            <AiFillProduct />
+            <span className="hidden md:inline ">New Products</span>
+          </li>
+        </NavLink>
         <NavLink to="products">
           <li
             className="flex items-center py-3 px-2 space-x-4 hover:rounded hover:cursor-pointer 

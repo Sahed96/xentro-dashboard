@@ -6,6 +6,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Users from './components/Users';
 import Dashboard from './components/Dashboard';
 import Products from './components/Products';
+import AddProducts from './components/AddProducts';
+import NewlyAddedProduct from './components/NewlyAddedProduct';
+import NoProduct from './components/NoProduct';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +30,18 @@ const router = createBrowserRouter([
       {
         path: 'products',
         element: <Products />,
+      },
+      {
+        path: 'add-products',
+        element: <AddProducts />,
+      },
+      {
+        path: 'new-products/:id',
+        element: <NewlyAddedProduct />,
+      },
+      {
+        path: 'new-products',
+        element: <NoProduct />,
       },
     ],
   },

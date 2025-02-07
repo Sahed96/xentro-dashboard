@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from 'react'
 export const ThemeCotext = createContext()
 
 const ThemeContextProvider = ({children}) => {
-    const [theme, setTheme] = useState('dark')
+    const [theme, setTheme] = useState('light')
 
     useEffect(() => {
         if(theme === "dark") {
@@ -14,7 +14,7 @@ const ThemeContextProvider = ({children}) => {
     }, [theme])
 
     const toggleTheme = () => {
-        setTheme(theme === "light" ? 'dark' : 'light')
+        setTheme(theme === "dark" ? 'light' : 'dark')
     }
   return (
     <ThemeCotext.Provider value={{theme, toggleTheme}}>

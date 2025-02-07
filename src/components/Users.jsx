@@ -41,7 +41,7 @@ const Users = () => {
   }, [selectedUser]);
 
   return (
-    <div className="grow grid gap-5 grid-cols-4 p-8">
+    <div className="grow grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-8">
       {users.map(user => (
         <div
           key={user.id}
@@ -72,8 +72,8 @@ const Users = () => {
         </div>
       ))}
       <Modal
-        title="User Details"
-        centered
+        title={selectedUser?.name}
+        
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
@@ -82,7 +82,7 @@ const Users = () => {
           <div>
             <h2>{selectedUser.name}</h2>
             <p>{selectedUser.email}</p>
-            <p>{selectedUser.address?.city}</p>
+            <p>{selectedUser.address?.city}, {selectedUser.address?.street}, {selectedUser.address?.suite}, {selectedUser.address?.zipcode}</p>
           </div>
         )}
       </Modal>
