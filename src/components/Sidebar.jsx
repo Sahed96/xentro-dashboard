@@ -73,7 +73,7 @@ const Sidebar = () => {
           className="lg:w-36 w-10 h-10 lg:h-14 border-2 border-sky-300 flex justify-center items-center gap-2 text-sky-800 font-black rounded-full hover:text-white duration-300 relative group"
         >
           <HiOutlineLogout />
-          <span className='hidden md:inline'>
+          <span className="hidden md:inline">
             <span className="absolute w-12 group-hover:w-[88%] duration-300 flex group-hover:justify-start rounded-full inset-2 bg-sky-300 group-hover:bg-sky-500 group-hover:duration-500 -z-10"></span>
             Logout
           </span>

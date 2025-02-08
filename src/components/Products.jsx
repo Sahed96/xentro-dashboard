@@ -2,14 +2,12 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { DownOutlined } from '@ant-design/icons';
 import ProductCard from './ProductCard';
-import { Dropdown, Space, } from 'antd';
+import { Dropdown, Space } from 'antd';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState('');
   const [sort, setSort] = useState('');
-
-
 
   const filteredProducts = products.filter(product => {
     return product.name.toLowerCase().includes(search.toLowerCase());
@@ -20,7 +18,6 @@ const Products = () => {
     if (sort === 'desc') return b.id - a.id;
     return 0;
   });
-
 
   useEffect(() => {
     axios.get('https://api.restful-api.dev/objects').then(res => {
@@ -58,7 +55,7 @@ const Products = () => {
             }}
           >
             <a onClick={e => e.preventDefault()}>
-              <Space className='bg-[#3d8cd6] text-white px-4 py-2 rounded-lg'>
+              <Space className="bg-[#3d8cd6] text-white px-4 py-2 rounded-lg">
                 Sort By
                 <DownOutlined />
               </Space>
@@ -66,12 +63,12 @@ const Products = () => {
           </Dropdown>
         </div>
       </div>
-       <div className="grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
-      {sortedProducts.map(product => (
-        <ProductCard key={product.id} product={product} />
-      ))}
+      <div className="grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
+        {sortedProducts.map(product => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
     </div>
-   </div>
   );
 };
 

@@ -60,7 +60,7 @@ const Users = () => {
       <div className="flex items-center gap-10 pt-3 px-8">
         <div className="flex items-center gap-4">
           {' '}
-          <p className='hidden md:block'>Search</p>
+          <p className="hidden md:block">Search</p>
           <input
             value={search}
             onChange={e => setSearch(e.target.value)}
@@ -86,7 +86,7 @@ const Users = () => {
             }}
           >
             <a onClick={e => e.preventDefault()}>
-              <Space className='bg-[#3d8cd6] text-white lg:px-4 px-2 py-1 lg:py-2 rounded-lg'>
+              <Space className="bg-[#3d8cd6] text-white lg:px-4 px-2 py-1 lg:py-2 rounded-lg">
                 Sort By
                 <DownOutlined />
               </Space>
@@ -132,16 +132,32 @@ const Users = () => {
         >
           {selectedUser && (
             <div>
-              <h2><a className='font-bold mr-2'>Name :</a>{selectedUser.name}</h2>
-              <p><a className='font-bold mr-2'>Email :</a>{selectedUser.email}</p>
-              <p> <a className='font-bold mr-2'>Location :</a>
+              <h2>
+                <a className="font-bold mr-2">Name :</a>
+                {selectedUser.name}
+              </h2>
+              <p>
+                <a className="font-bold mr-2">Email :</a>
+                {selectedUser.email}
+              </p>
+              <p>
+                {' '}
+                <a className="font-bold mr-2">Location :</a>
                 {selectedUser.address?.city}, {selectedUser.address?.street},{' '}
                 {selectedUser.address?.suite}, {selectedUser.address?.zipcode}
               </p>
-              <p><a className='font-bold mr-2'>Phone :</a>{selectedUser.phone}</p>
-              <p><a className='font-bold mr-2'>Website :</a>{selectedUser.website}</p>
-              <p><a className='font-bold mr-2'>Company Name :</a>{selectedUser.company?.name}</p>
-              
+              <p>
+                <a className="font-bold mr-2">Phone :</a>
+                {selectedUser.phone}
+              </p>
+              <p>
+                <a className="font-bold mr-2">Website :</a>
+                {selectedUser.website}
+              </p>
+              <p>
+                <a className="font-bold mr-2">Company Name :</a>
+                {selectedUser.company?.name}
+              </p>
             </div>
           )}
         </Modal>
