@@ -4,6 +4,7 @@ import logo from '/xentro.jpg';
 import { FaTachometerAlt, FaUsers, FaBox } from 'react-icons/fa';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { AiFillProduct } from 'react-icons/ai';
+import { HiOutlineLogout } from 'react-icons/hi';
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -66,10 +67,16 @@ const Sidebar = () => {
           </li>
         </NavLink>
       </ul>
-      <div className='absolute bottom-5 left-1/2 transform -translate-x-1/2'>
-        <button onClick={handleLogout} className="w-36 h-14 border-2 border-sky-300 text-sky-800 font-black rounded-full hover:text-white duration-300 relative group">
-          <span className="absolute w-12 group-hover:w-[88%] duration-300 flex group-hover:justify-start rounded-full inset-2 bg-sky-300 group-hover:bg-sky-500 group-hover:duration-500 -z-10"></span>
-          Logout
+      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">
+        <button
+          onClick={handleLogout}
+          className="lg:w-36 w-10 h-10 lg:h-14 border-2 border-sky-300 flex justify-center items-center gap-2 text-sky-800 font-black rounded-full hover:text-white duration-300 relative group"
+        >
+          <HiOutlineLogout />
+          <span className='hidden md:inline'>
+            <span className="absolute w-12 group-hover:w-[88%] duration-300 flex group-hover:justify-start rounded-full inset-2 bg-sky-300 group-hover:bg-sky-500 group-hover:duration-500 -z-10"></span>
+            Logout
+          </span>
         </button>
       </div>
     </div>

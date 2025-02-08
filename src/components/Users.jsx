@@ -60,11 +60,11 @@ const Users = () => {
       <div className="flex items-center gap-10 pt-3 px-8">
         <div className="flex items-center gap-4">
           {' '}
-          <p>Search</p>
+          <p className='hidden md:block'>Search</p>
           <input
             value={search}
             onChange={e => setSearch(e.target.value)}
-            className="rounded-lg border border-[#1B8EF8] bg-transparent px-4 py-2 text-[#1B8EF8] ring-offset-1 duration-200 focus:outline-none focus:ring-2"
+            className="rounded-lg w-3/2 lg:w-full border border-[#1B8EF8] bg-transparent px-4 py-2 text-[#1B8EF8] ring-offset-1 duration-200 focus:outline-none focus:ring-2"
             type="text"
           />
         </div>
@@ -86,7 +86,7 @@ const Users = () => {
             }}
           >
             <a onClick={e => e.preventDefault()}>
-              <Space className='bg-[#3d8cd6] text-white px-4 py-2 rounded-lg'>
+              <Space className='bg-[#3d8cd6] text-white lg:px-4 px-2 py-1 lg:py-2 rounded-lg'>
                 Sort By
                 <DownOutlined />
               </Space>
