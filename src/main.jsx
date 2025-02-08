@@ -9,6 +9,8 @@ import Products from './components/Products';
 import AddProducts from './components/AddProducts';
 import NewlyAddedProduct from './components/NewlyAddedProduct';
 import NoProduct from './components/NoProduct';
+import Login from './Pages/Login';
+import ProtectedRoute from './Layout/ProtectedRoute';
 
 const router = createBrowserRouter([
   {
@@ -16,34 +18,63 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        index: true,
-        element: <Dashboard />,
-      },
-      {
         path: 'users',
-        element: <Users />,
+        element: (
+          <ProtectedRoute>
+            {' '}
+            <Users />
+          </ProtectedRoute>
+        ),
       },
       {
         path: 'dashboard',
-        element: <Dashboard />,
+        element: (
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        ),
       },
       {
         path: 'products',
-        element: <Products />,
+        element: (
+          <ProtectedRoute>
+            {' '}
+            <Products />{' '}
+          </ProtectedRoute>
+        ),
       },
       {
         path: 'add-products',
-        element: <AddProducts />,
+        element: (
+          <ProtectedRoute>
+            {' '}
+            <AddProducts />{' '}
+          </ProtectedRoute>
+        ),
       },
       {
         path: 'new-products/:id',
-        element: <NewlyAddedProduct />,
+        element: (
+          <ProtectedRoute>
+            {' '}
+            <NewlyAddedProduct />{' '}
+          </ProtectedRoute>
+        ),
       },
       {
         path: 'new-products',
-        element: <NoProduct />,
+        element: (
+          <ProtectedRoute>
+            {' '}
+            <NoProduct />{' '}
+          </ProtectedRoute>
+        ),
       },
     ],
+  },
+  {
+    path: '/login',
+    element: <Login />,
   },
 ]);
 

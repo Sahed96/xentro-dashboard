@@ -1,6 +1,6 @@
 import Card from './Card';
 import { FaBox, FaUsers } from 'react-icons/fa';
-import { dataLine, dataBar } from '../assets/chartData';
+import { dataBar } from '../assets/chartData';
 import { Line, Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
