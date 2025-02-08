@@ -1,8 +1,9 @@
-import { Outlet } from 'react-router-dom';
-// import Dashboard from './components/Dashboard';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import ThemeContextProvider from './context/ThemeContextProvider';
+import Login from './Pages/Login';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
@@ -15,7 +16,11 @@ function App() {
         >
           <Navbar />
           <div>
-            <Outlet />
+            <Routes>
+              <Route path="/" element={<Navigate to="/login" />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+            </Routes>
           </div>
         </div>
       </div>
